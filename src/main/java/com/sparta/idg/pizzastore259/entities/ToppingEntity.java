@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
+import static java.lang.String.valueOf;
+
 @Entity
 @Table(name = "toppings")
 public class ToppingEntity {
@@ -37,7 +39,7 @@ public class ToppingEntity {
     }
 
     public BigDecimal getPrice() {
-        return price;
+        return new BigDecimal(valueOf(price));
     }
 
     public void setPrice(BigDecimal price) {

@@ -34,20 +34,21 @@ public class PizzaStore259Application {
             logger.info(pizzaSizeEntityRepository.findSizesByName("Small").toString());
 
             //this comes before actually -repo methods
-            System.out.println("pizzaOrderEntityRepository.findAll().toString()");
-            logger.info(pizzaOrderEntityRepository.findAll().toString());
-            System.out.println("pizzaOrderEntityRepository.findById(2).toString()");
-            logger.info(pizzaOrderEntityRepository.findById(2).toString());
-            System.out.println("pizzaOrderEntityRepository.existsById(1)))");
-            logger.info(String.valueOf(pizzaOrderEntityRepository.existsById(1)));
-            System.out.println("find all toppings");
-            logger.info(pizzaOrderToppingEntityRepository.findAll().toString());
-            System.out.println("get topping entity id repo count");
-            logger.info(String.valueOf(pizzaOrderToppingEntityIdRepository.count()));
+          //  System.out.println("pizzaOrderEntityRepository.findAll().toString()");
+          //  logger.info(pizzaOrderEntityRepository.findAll().toString());
+          //  System.out.println("pizzaOrderEntityRepository.findById(2).toString()");
+          //  logger.info(pizzaOrderEntityRepository.findById(2).toString());
+           // System.out.println("pizzaOrderEntityRepository.existsById(1)))");
+           // logger.info(String.valueOf(pizzaOrderEntityRepository.existsById(1)));
+           // System.out.println("find all toppings");
+           // logger.info(pizzaOrderToppingEntityRepository.findAll().toString());
+           // System.out.println("get topping entity id repo count");
+            //logger.info(String.valueOf(pizzaOrderToppingEntityIdRepository.count()));
         //System.out.print(String.valueOf(pizzaOrderEntityRepository.findById(1)));
 
 
             pizzaStoreService.getAllOrders();
+            pizzaStoreService.findAllPricesForToppings();
 
 
         };

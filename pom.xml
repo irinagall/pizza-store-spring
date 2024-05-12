@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sparta.idg</groupId>
-    <artifactId>pizza-size-259</artifactId>
+    <artifactId>pizza-store-259</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pizza-size-259</name>
     <description>pizza-size-259</description>
