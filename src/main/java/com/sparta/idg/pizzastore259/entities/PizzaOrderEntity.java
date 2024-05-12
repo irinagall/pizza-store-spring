@@ -1,28 +1,27 @@
 package com.sparta.idg.pizzastore259.entities;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.ColumnDefault;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
-@Table(name = "orders", schema = "pizza")
-public class OrderEntity {
+@Table(name = "pizza_order")
+public class PizzaOrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id", nullable = false)
     private Integer id;
 
+    @Size(max = 100)
     @Column(name = "customer_name", length = 100)
     private String customerName;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "order_date")
-    private LocalDateTime orderDate;
-
-    @Column(name = "total_amount", precision = 10, scale = 2)
-    private BigDecimal totalAmount;
+    private Instant orderDate;
 
     public Integer getId() {
         return id;
@@ -40,29 +39,20 @@ public class OrderEntity {
         this.customerName = customerName;
     }
 
-    public LocalDateTime getOrderDate() {
+    public Instant getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDateTime orderDate) {
+    public void setOrderDate(Instant orderDate) {
         this.orderDate = orderDate;
-    }
-
-    public BigDecimal getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(BigDecimal totalAmount) {
-        this.totalAmount = totalAmount;
     }
 
     @Override
     public String toString() {
-        return "OrderEntity{" +
+        return "PizzaOrderEntity{" +
                 "id=" + id +
                 ", customerName='" + customerName + '\'' +
                 ", orderDate=" + orderDate +
-                ", totalAmount=" + totalAmount +
                 '}';
     }
 }

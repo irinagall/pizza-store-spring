@@ -1,17 +1,19 @@
 package com.sparta.idg.pizzastore259.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "toppings", schema = "pizza")
+@Table(name = "toppings")
 public class ToppingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "topping_id", nullable = false)
     private Integer id;
 
+    @Size(max = 50)
     @Column(name = "topping_name", length = 50)
     private String toppingName;
 
@@ -42,4 +44,12 @@ public class ToppingEntity {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "ToppingEntity{" +
+                "id=" + id +
+                ", toppingName='" + toppingName + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
